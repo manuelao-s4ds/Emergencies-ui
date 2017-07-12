@@ -1,3 +1,75 @@
-<p>
-  table-emergencies works!
-</p>
+<div class="container-table-material">
+  <div class="title-table-material">
+    <h2>Emergencias</h2>
+  </div>
+  <div class="layout-table-material">
+    <div class="layout-sort-by">
+      <div class="container-sort">
+        <select name="" id="">
+          <option value="">Sort by</option>
+        </select>
+      </div>
+      <div class="container-button">
+        <button [routerLink]="['/emergencias']">Nueva materia prima</button>
+      </div>
+    </div>
+    <div class="table">
+      <div class="table-header">
+        <div class="t-head">
+          <span>
+            Nombre
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Descripción
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Inventario
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Stock
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Estado
+          </span>
+        </div>
+      </div>
+      <div class="table-body">
+        <div class="row-unit" *ngFor="let materia of rawMaterials; let i = index">
+          <div class="t-body" (click)="openModal(materia)">
+            <span>{{materia.nombre}}</span>
+          </div>
+          <div class="t-body">
+            <span>{{materia.descripcion}}</span>
+          </div>
+          <div class="t-body">
+            <span>{{materia.cantidad}} {{materia.unidad_medida.code}}</span>
+          </div>
+          <div class="t-body">
+            <span>{{materia.stock}}</span>
+          </div>
+          <div class="t-body">
+            <div class="">
+              <md-slide-toggle
+                [color]="color"
+                [checked]="materia.estado"
+                (click)="changeStatus(materia)"
+              >
+                <span [hidden]="!materia.estado">Activo</span>
+                <span [hidden]="materia.estado">Inactivo</span>
+              </md-slide-toggle>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

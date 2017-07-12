@@ -1,0 +1,12 @@
+.container{
+  display: flex;
+  align-items: stretch;
+}
+
+.container .container-menu{
+  width: 35%;
+}
+
+.container .container-{
+  width: 65%;
+}
