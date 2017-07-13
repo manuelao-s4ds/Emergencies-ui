@@ -17,55 +17,48 @@
       <div class="table-header">
         <div class="t-head">
           <span>
-            Nombre
+            Fecha
           </span>
         </div>
         <div class="t-head">
           <span>
-            Descripción
+            Tipo Accidente
           </span>
         </div>
         <div class="t-head">
           <span>
-            Inventario
+            Ambulancia
           </span>
         </div>
         <div class="t-head">
           <span>
-            Stock
+            Paramedico
           </span>
         </div>
         <div class="t-head">
           <span>
-            Estado
+            Accion
           </span>
         </div>
       </div>
       <div class="table-body">
-        <div class="row-unit" *ngFor="let materia of rawMaterials; let i = index">
-          <div class="t-body" (click)="openModal(materia)">
-            <span>{{materia.nombre}}</span>
+        <div class="row-unit" *ngFor="let emergency of emergencies; let i = index">
+          <div class="t-body" (click)="openModal(emergency)">
+            <span>{{emergency.date}}</span>
           </div>
           <div class="t-body">
-            <span>{{materia.descripcion}}</span>
+            <span>{{emergency.type_emergency}}</span>
           </div>
           <div class="t-body">
-            <span>{{materia.cantidad}} {{materia.unidad_medida.code}}</span>
+            <span>{{emergency.ambulance.car_plate}} - {{emergency.ambulance.car}}</span>
           </div>
           <div class="t-body">
-            <span>{{materia.stock}}</span>
+            <span>{{emergency.paramedic[0].name}} - {{emergency.paramedic[0].lastname}}</span>
           </div>
-          <div class="t-body">
-            <div class="">
-              <md-slide-toggle
-                [color]="color"
-                [checked]="materia.estado"
-                (click)="changeStatus(materia)"
-              >
-                <span [hidden]="!materia.estado">Activo</span>
-                <span [hidden]="materia.estado">Inactivo</span>
-              </md-slide-toggle>
-            </div>
+          <div class="t-body actions">
+            <figure class="container-icons" (click)="delete(emergency)">
+              <img src="assets/images/icons/delete_icon.png" alt="">
+            </figure>
           </div>
         </div>
       </div>
