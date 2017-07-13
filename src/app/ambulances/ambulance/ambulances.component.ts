@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {ToastsManager} from 'ng2-toastr';
 import { AmbulanceService } from './ambulances-service';
 
 
@@ -14,7 +15,14 @@ export class AmbulancesComponent implements OnInit {
   formAmbulance: FormGroup;
   public errorMessage: string;
 
-  constructor( private fb: FormBuilder, private _ambulanceService: AmbulanceService) { }
+  constructor(
+    private fb: FormBuilder,
+    private _ambulanceService: AmbulanceService,
+    private _container: ViewContainerRef,
+    private _toast: ToastsManager
+  ) {
+    this._toast.setRootViewContainerRef(_container);
+  }
 
   ngOnInit() {
     this.createForm();
@@ -52,7 +60,7 @@ export class AmbulancesComponent implements OnInit {
         }
       );
     }else {
-      this.errorMessage = 'Los campos marcados con * son obligatorios';
+      this._toast.info('Todos los campos marcados con * son obligatorios', 'Ambulancias!');
     }
   }
   cancel() {
