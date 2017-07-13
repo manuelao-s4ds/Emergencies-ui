@@ -1,3 +1,60 @@
-<p>
-  table-paramedics works!
-</p>
+<div class="container-table-material">
+  <div class="title-table-material">
+    <h2>Paramedicos</h2>
+  </div>
+  <div class="layout-table-material">
+    <div class="layout-sort-by">
+      <div class="container-sort">
+        <select name="" id="">
+          <option value="">Sort by</option>
+        </select>
+      </div>
+      <div class="container-button">
+        <button [routerLink]="['/paramedicos']">Nuevo paramedico</button>
+      </div>
+    </div>
+    <div class="table">
+      <div class="table-header">
+        <div class="t-head">
+          <span>
+            Nombres y Apellidos
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Numero Celular
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Especializacion
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Accion
+          </span>
+        </div>
+      </div>
+      <div class="table-body">
+        <div class="row-unit" *ngFor="let paramedic of paramedics; let i = index">
+          <div class="t-body" (click)="openModal(paramedic)">
+            <span>{{paramedic.name}} {{paramedic.lastname}}</span>
+          </div>
+          <div class="t-body">
+            <span>{{paramedic.cellPhone}}</span>
+          </div>
+          <div class="t-body">
+            <span>{{paramedic.specialization}}</span>
+          </div>
+          <div class="t-body actions">
+            <figure class="container-icons" (click)="delete(paramedic)">
+              <img src="assets/images/icons/delete_icon.png" alt="">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
