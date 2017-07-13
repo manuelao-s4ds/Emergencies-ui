@@ -1,7 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth-guard/auth-guard.guard';
 import { MainWindowComponent } from './main-window/main-window.component';
-import { EmergencyComponent } from './emergency/emergency.component';
+import { EmergencyComponent } from './emergencies/emergency/emergency.component';
+import { TableEmergenciesComponent } from './emergencies/table-emergencies/table-emergencies.component';
 
 
 export const routeConfig: Routes = [
@@ -16,6 +17,10 @@ export const routeConfig: Routes = [
             {
               path: 'emergencias',
               component: EmergencyComponent
+            },
+            {
+              path: 'listado-emergencias',
+              component: TableEmergenciesComponent
             }
           ]
         }
