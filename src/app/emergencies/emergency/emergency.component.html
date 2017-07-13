@@ -1,0 +1,178 @@
+<div class="container-form-rawmaterial">
+  <md-tab-group>
+    <md-tab label="Datos Emergencia">
+      <div class="layout-form-rawmaterial">
+        <div class="title-form-rawmaterial">
+          <h2>Emergencia</h2>
+        </div>
+        <div class="form-rawmaterial">
+          <form [formGroup]="formEmergency">
+            <div class="container-inputs">
+              <div class="layout-input">
+                <div class="container-input">
+                  <label for="date">
+                    *Fecha
+                    <input type="text" name="date" id="date" formControlName="date">
+                  </label>
+                </div>
+                <div class="container-input">
+                  <label for="category">
+                    *Categoria emergencia
+                    <input type="text" name="category" id="category" formControlName="category">
+                  </label>
+                </div>
+              </div>
+              <div class="layout-input">
+                <div class="container-input">
+                  <label for="ambulance">
+                    *Ambulancia
+                    <select name="ambulance" id="ambulance" formControlName="ambulance" (change)="setAmbulance()">
+                      <option value="">Seleccione una ambulancia</option>
+                      <option *ngFor="let ambulance of ambulances; let i = index"
+                              value="{{ambulance._id}}"
+                      >
+                        {{ambulance.car_plate}} - {{ambulance.car}}
+                      </option>
+                    </select>
+                  </label>
+                </div>
+                <div class="container-input">
+                  <label for="driver">
+                    *Conductor
+                    <select name="driver" id="driver" formControlName="driver" (change)="setDriver()">
+                      <option value="">Seleccione un conductor</option>
+                      <option *ngFor="let paramedic of paramedics; let i = index"
+                              value="{{paramedic._id}}"
+                      >
+                        {{paramedic.name}} {{paramedic.lastname}}
+                      </option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="layout-input">
+                <div class="container-input">
+                  <label for="paramedics">
+                    *Paramedico
+                    <select name="paramedics" id="paramedics" formControlName="paramedic" (change)="setParamedics()">
+                      <option value="">Seleccione un paramedico</option>
+                      <option *ngFor="let paramedic of paramedics; let i = index"
+                              value="{{paramedic._id}}"
+                      >
+                        {{paramedic.name}} {{paramedic.lastname}}
+                      </option>
+                    </select>
+                  </label>
+                </div>
+                <div class="container-input">
+                  <label for="address">
+                    *Direccion emergencia
+                    <input type="text" name="address" id="address" formControlName="address">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </md-tab>
+    <md-tab label="Datos Pacientes">
+      <div class="layout-form-rawmaterial">
+        <div class="title-form-rawmaterial">
+          <h2>Pacientes</h2>
+        </div>
+        <div class="form-rawmaterial">
+          <form [formGroup]="formPatient">
+            <div class="container-inputs">
+              <div class="layout-input">
+                <div class="container-input">
+                  <label for="name">
+                    *Nombre
+                    <input type="text" name="name" id="name" formControlName="name">
+                  </label>
+                </div>
+                <div class="container-input">
+                  <label for="document">
+                    *Documento
+                    <input type="text" name="document" id="document" formControlName="document">
+                  </label>
+                </div>
+              </div>
+              <div class="layout-input">
+                <div class="container-input">
+                  <label for="age">
+                    *Edad
+                    <input type="text" name="age" id="age" formControlName="age">
+                  </label>
+                </div>
+                <div class="container-input">
+                  <label for="observations">
+                    *Observaciones
+                    <input type="text" name="observations" id="observations" formControlName="observation">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="container-buttons">
+          <button class="button" (click)="addPatient()">Agregar paciente</button>
+        </div>
+        <div class="container-table-material">
+          <div class="layout-table-material">
+            <div class="table">
+              <div class="table-header">
+                <div class="t-head">
+              <span>
+                Nombre
+              </span>
+                </div>
+                <div class="t-head">
+              <span>
+                Documento
+              </span>
+                </div>
+                <div class="t-head">
+              <span>
+                Edad
+              </span>
+                </div>
+                <div class="t-head">
+              <span>
+                Observacion
+              </span>
+                </div>
+              </div>
+              <div class="table-body">
+                <div class="row-unit" *ngFor="let patient of patients; let i = index">
+                  <div class="t-body">
+                    <span>{{patient.name}}</span>
+                  </div>
+                  <div class="t-body">
+                    <span>{{patient.document}}</span>
+                  </div>
+                  <div class="t-body">
+                    <span>{{patient.age}}</span>
+                  </div>
+                  <div class="t-body">
+                    <span>{{patient.description}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-tab>
+  </md-tab-group>
+  <div class="container-buttons">
+    <button class="button" (click)="saveEmergency()">Guardar Emergencia</button>
+    <button class="button" [routerLink]="['/listado-emergencias']">Listado</button>
+    <button class="button" (click)="cancel()">Cancelar</button>
+  </div>
+
+
+</div>
+
+
+

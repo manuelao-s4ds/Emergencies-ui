@@ -1,0 +1,52 @@
+<div class="container-title-modal">
+  <h1 md-dialog-title class="title-modal">{{title}}</h1>
+</div>
+<div md-dialog-content class="container-modal">
+  <div class="container-error">
+    <p>{{errorMessage}}</p>
+  </div>
+  <md-tab-group>
+    <md-tab label="Datos Ambulancia">
+      <div class="layout-form-rawmaterial">
+        <div class="form-rawmaterial">
+          <form [formGroup]="formAmbulance">
+            <div class="container-inputs">
+              <div class="layout-input">
+                <div class="container-input">
+                  <label for="car">
+                    *Marca
+                    <input type="text" name="car" id="car" formControlName="car">
+                  </label>
+                </div>
+                <div class="container-input">
+                  <label for="car_plate">
+                    *Placa
+                    <input type="text" name="car_plate" id="car_plate" formControlName="car_plate">
+                  </label>
+                </div>
+              </div>
+              <div class="layout-input">
+                <div class="container-input">
+                  <label for="type_ambulance">
+                    *Tipo de Ambulancia
+                    <input type="text" name="type_ambulance" id="type_ambulance" formControlName="type_ambulance">
+                  </label>
+                </div>
+                <div class="container-input">
+                  <label for="available">
+                    *Disponible
+                    <input type="checkbox" name="available" id="available" formControlName="available">
+                  </label>
+                </div>	
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </md-tab>
+  </md-tab-group>
+</div>
+<div md-dialog-actions class="container-buttons-modal">
+  <button md-button (click)="update()">Actualizar</button>
+  <button md-button (click)="closeModal()">Cancelar</button>
+</div>
