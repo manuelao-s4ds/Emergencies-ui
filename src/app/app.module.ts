@@ -19,6 +19,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { EmergencyComponent } from './emergency/emergency.component';
 import { TableEmergenciesComponent } from './table-emergencies/table-emergencies.component';
 import { ModalEditEmergenciesComponent } from './modal-edit-emergencies/modal-edit-emergencies.component';
+import { AmbulancesComponent } from './ambulances/ambulances.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ModalEditEmergenciesComponent } from './modal-edit-emergencies/modal-ed
     ContactListComponent,
     EmergencyComponent,
     TableEmergenciesComponent,
-    ModalEditEmergenciesComponent
+    ModalEditEmergenciesComponent,
+    AmbulancesComponent
   ],
   imports: [
     BrowserModule,
