@@ -22,6 +22,9 @@ import { TableEmergenciesComponent } from './emergencies/table-emergencies/table
 import { ModalEditEmergenciesComponent } from './modals/modal-edit-emergencies/modal-edit-emergencies.component';
 import { TableAmbulancesComponent } from './ambulances/table-ambulances/table-ambulances.component';
 import { ModalEditAmbulancesComponent } from './modals/modal-edit-ambulances/modal-edit-ambulances.component';
+import { ParamedicsComponent } from './paramedics/paramedics/paramedics.component';
+import { TableParamedicsComponent } from './paramedics/table-paramedics/table-paramedics.component';
+import { ModalEditParamedicsComponent } from './modals/modal-edit-paramedics/modal-edit-paramedics.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,11 @@ import { ModalEditAmbulancesComponent } from './modals/modal-edit-ambulances/mod
     ModalEditEmergenciesComponent,
     AmbulancesComponent,
     TableAmbulancesComponent,
-    ModalEditAmbulancesComponent
+    ModalEditAmbulancesComponent,
+    ModalEditEmergenciesComponent,
+    ParamedicsComponent,
+    TableParamedicsComponent,
+    ModalEditParamedicsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,9 @@ import { ModalEditAmbulancesComponent } from './modals/modal-edit-ambulances/mod
     ToastModule.forRoot()
   ],
   entryComponents: [
-    ModalEditEmergenciesComponent, ModalEditAmbulancesComponent
+    ModalEditEmergenciesComponent,
+    ModalEditAmbulancesComponent,
+    ModalEditParamedicsComponent
   ],
   providers: [AuthGuard, Oauthv2TokenHandlerService, HttpService],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import {ToastsManager} from 'ng2-toastr';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { EmergencyService } from './emergency-service';
 
@@ -22,7 +23,9 @@ export class EmergencyComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private _emergencyService: EmergencyService
+    private _emergencyService: EmergencyService,
+    private _container: ViewContainerRef,
+    private _toast: ToastsManager
   ) {
     this.ambulances = [];
     this.paramedics = [];
@@ -31,6 +34,7 @@ export class EmergencyComponent implements OnInit {
     this.driverSelected = {};
     this.paramedicsSelected = [];
     this.positions = [];
+    this._toast.setRootViewContainerRef(_container);
   }
 
   ngOnInit() {
@@ -92,31 +96,37 @@ export class EmergencyComponent implements OnInit {
   }
   saveEmergency() {
     if (this.formEmergency.valid) {
-      const emergency = {
-        date: this.formEmergency.get('date').value,
-        type_emergency: this.formEmergency.get('category').value,
-        driver: this.driverSelected,
-        ambulance: this.ambulanceSelected,
-        paramedic: this.paramedicsSelected,
-        patient: this.patients,
-        location: {
-          type: 'Point',
-          coordinates: this.positions
-        }
-      };
-      this.formEmergency.reset({
-        driver: '',
-        ambulance: '',
-        paramedics: ''
-      });
-      this._emergencyService.save(emergency).subscribe(
-        (res) => {
-          console.log(res.json());
-        },
-        (error) => {
-          console.log(error.json());
-        }
-      );
+      if (this.patients.length > 0) {
+        const emergency = {
+          date: this.formEmergency.get('date').value,
+          type_emergency: this.formEmergency.get('category').value,
+          driver: this.driverSelected,
+          ambulance: this.ambulanceSelected,
+          paramedic: this.paramedicsSelected,
+          patient: this.patients,
+          location: {
+            type: 'Point',
+            coordinates: this.positions
+          }
+        };
+        this.formEmergency.reset({
+          driver: '',
+          ambulance: '',
+          paramedics: ''
+        });
+        this._emergencyService.save(emergency).subscribe(
+          (res) => {
+            console.log(res.json());
+          },
+          (error) => {
+            console.log(error.json());
+          }
+        );
+      }else{
+        this._toast.info('Debe ingresar al menos un paciente', 'Emergencias!');
+      }
+    }else{
+      this._toast.info('Todos los campos marcados con * son obligatorios', 'Emergencias!');
     }
   }
   getPosition() {
@@ -138,6 +148,14 @@ export class EmergencyComponent implements OnInit {
     const paramedic = this.paramedics.filter(paramedic => paramedic._id === this.formEmergency.get('driver').value);
     this.driverSelected = {};
     this.driverSelected = paramedic[0];
+  }
+  cacel() {
+    this.formEmergency.reset({
+      driver: '',
+      paramedic: '',
+      ambulance: ''
+    });
+    this.formPatient.reset();
   }
 
 }

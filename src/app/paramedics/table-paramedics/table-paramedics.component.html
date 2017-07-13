@@ -1,6 +1,6 @@
 <div class="container-table-material">
   <div class="title-table-material">
-    <h2>Emergencias</h2>
+    <h2>Paramedicos</h2>
   </div>
   <div class="layout-table-material">
     <div class="layout-sort-by">
@@ -10,29 +10,24 @@
         </select>
       </div>
       <div class="container-button">
-        <button [routerLink]="['/emergencias']">Nueva emergencia</button>
+        <button [routerLink]="['/paramedicos']">Nuevo paramedico</button>
       </div>
     </div>
     <div class="table">
       <div class="table-header">
         <div class="t-head">
           <span>
-            Fecha
+            Nombres y Apellidos
           </span>
         </div>
         <div class="t-head">
           <span>
-            Tipo Accidente
+            Numero Celular
           </span>
         </div>
         <div class="t-head">
           <span>
-            Ambulancia
-          </span>
-        </div>
-        <div class="t-head">
-          <span>
-            Paramedico
+            Especializacion
           </span>
         </div>
         <div class="t-head">
@@ -42,21 +37,18 @@
         </div>
       </div>
       <div class="table-body">
-        <div class="row-unit" *ngFor="let emergency of emergencies; let i = index">
-          <div class="t-body" (click)="openModal(emergency)">
-            <span>{{emergency.date}}</span>
+        <div class="row-unit" *ngFor="let paramedic of paramedics; let i = index">
+          <div class="t-body" (click)="openModal(paramedic)">
+            <span>{{paramedic.name}} {{paramedic.lastname}}</span>
           </div>
           <div class="t-body">
-            <span>{{emergency.type_emergency}}</span>
+            <span>{{paramedic.cellPhone}}</span>
           </div>
           <div class="t-body">
-            <span>{{emergency.ambulance.car_plate}} - {{emergency.ambulance.car}}</span>
-          </div>
-          <div class="t-body">
-            <span>{{emergency.paramedic[0].name}} - {{emergency.paramedic[0].lastname}}</span>
+            <span>{{paramedic.specialization}}</span>
           </div>
           <div class="t-body actions">
-            <figure class="container-icons" (click)="delete(emergency)">
+            <figure class="container-icons" (click)="delete(paramedic)">
               <img src="assets/images/icons/delete_icon.png" alt="">
             </figure>
           </div>
