@@ -1,0 +1,75 @@
+<div class="container-form-rawmaterial">
+  <div class="layout-form-rawmaterial">
+    <div class="title-form-rawmaterial">
+      <h2>Paramedicos</h2>
+    </div>
+    <div class="form-rawmaterial">
+      <form [formGroup]="formParamedics">
+        <div class="container-inputs">
+          <div class="layout-input">
+            <div class="container-input">
+              <label for="name">
+                *Nombres
+                <input type="text" name="name" id="name" formControlName="name">
+              </label>
+            </div>
+            <div class="container-input">
+              <label for="lastname">
+                *Apellidos
+                <input type="text" name="lastname" id="lastname" formControlName="lastname">
+              </label>
+            </div>
+          </div>
+          <div class="layout-input">
+            <div class="container-input">
+              <label for="phone">
+                Telefono Fijo
+                <input type="text" name="phone" id="phone" formControlName="phone">
+              </label>
+            </div>
+            <div class="container-input">
+              <label for="cellPhone">
+                *Telefono Celular
+                <input type="text" name="cellPhone" id="cellPhone" formControlName="cellPhone">
+              </label>
+            </div>
+          </div>
+          <div class="layout-input">
+            <div class="container-input">
+              <label for="gender">
+                *Genero
+                <select name="gender" id="gender" formControlName="gender">
+                  <option value="">Seleccione una ambulancia</option>
+                  <option value="1">Masculino</option>
+                  <option value="2">Femenino</option>
+                </select>
+              </label>
+            </div>
+            <div class="container-input">
+              <label for="birthdate">
+                Fecha Nacimiento
+                <input type="text" name="birthdate" id="birthdate" formControlName="birthdate">
+              </label>
+            </div>
+          </div>
+          <div class="layout-input">
+            <div class="container-input">
+              <label for="specialization">
+                *Especializacion
+                <input type="text" name="specialization" id="specialization" formControlName="specialization">
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container-buttons">
+    <button class="button" (click)="save()">Guardar Paramedico</button>
+    <button class="button" [routerLink]="['/listado-paramedicos']">Listado</button>
+    <button class="button">Cancelar</button>
+  </div>
+</div>
+
+
+
