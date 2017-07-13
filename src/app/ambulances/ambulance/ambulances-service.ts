@@ -33,6 +33,6 @@ export class AmbulanceService {
   }
 
   delete(id: number): Observable <Response> {
-    return this._httpService.delete(`${AmbulanceService.BASE_URL}/ambulances/${id}/`, JSON.stringify({}));
+    return this._httpService.delete(`${AmbulanceService.BASE_URL}/ambulances/${id}`, JSON.stringify({}));
   }
 }
