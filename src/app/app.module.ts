@@ -16,10 +16,10 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { MainWindowComponent } from './main-window/main-window.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
-import { EmergencyComponent } from './emergency/emergency.component';
-import { TableEmergenciesComponent } from './table-emergencies/table-emergencies.component';
-import { ModalEditEmergenciesComponent } from './modal-edit-emergencies/modal-edit-emergencies.component';
 import { AmbulancesComponent } from './ambulances/ambulances.component';
+import { EmergencyComponent } from './emergencies/emergency/emergency.component';
+import { TableEmergenciesComponent } from './emergencies/table-emergencies/table-emergencies.component';
+import { ModalEditEmergenciesComponent } from './modals/modal-edit-emergencies/modal-edit-emergencies.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,9 @@ import { AmbulancesComponent } from './ambulances/ambulances.component';
     MaterialModule,
     ReactiveFormsModule,
     ToastModule.forRoot()
+  ],
+  entryComponents: [
+    ModalEditEmergenciesComponent
   ],
   providers: [AuthGuard, Oauthv2TokenHandlerService, HttpService],
   bootstrap: [AppComponent]
