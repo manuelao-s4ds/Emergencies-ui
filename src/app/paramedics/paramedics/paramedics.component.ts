@@ -66,4 +66,10 @@ export class ParamedicsComponent implements OnInit {
     }
   }
 
+  cancel() {
+    this.formParamedics.reset({
+      gender: ''
+    })
+  }
+
 }
