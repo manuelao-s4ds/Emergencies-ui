@@ -1,0 +1,140 @@
+
+
+.container-form-rawmaterial {
+  padding: 2rem 3rem;
+}
+
+.container-form-rawmaterial .layout-form-rawmaterial {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-form-rawmaterial .layout-form-rawmaterial .title-form-rawmaterial {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 50px;
+  border-bottom: 1px solid #C1C1C1;
+  justify-content: center;
+  border-bottom: none;
+}
+.container-form-rawmaterial .container-buttons-modal button {
+  height: 30px;
+  width: 100px;
+  border: none;
+  background: #1D2939;
+  color: #ffffff;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.container-buttons-modal button:first-child {
+  margin-right: 16px;
+}
+
+.container-form-rawmaterial .layout-form-rawmaterial .title-form-rawmaterial h2{
+  margin: 0;
+  color: #505050;
+}
+
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial {
+  padding: 2rem 3rem;
+  background: #FFFFFF;
+}
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial form .container-inputs {
+  width: 90%;
+  margin: 0 auto;
+}
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input {
+  display: flex;
+  justify-content: space-between;
+}
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input .container-input {
+  width: 40%;
+}
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input .container-input label {
+  display: block;
+  margin: 15px auto;
+  color: #505050;
+  font-size: 15px;
+  width: 100%;
+}
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input .container-input label input {
+  background-color: #FFFFFF;
+  color: #505050;
+  border: 1px solid #505050;
+  height: 35px;
+  width: 250px;
+  border-radius: 2px;
+  text-indent: 3px;
+  display: block;
+  margin-top: 5.8px;
+  width: 100%;
+}
+
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input .container-input label select {
+  background-color: #FFFFFF;
+  color: #505050;
+  border: 1px solid #505050;
+  height: 40px;
+  width: 250px;
+  border-radius: 2px;
+  text-indent: 3px;
+  margin-top: 5.8px;
+  width: 100%;
+}
+
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial .container-buttons {
+  display: flex;
+  padding: 2rem;
+  padding-left: 0;
+}
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial .container-buttons .button {
+  height: 35px;
+  width: 250px;
+  border: none;
+  color: #505050;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.container-form-rawmaterial .layout-form-rawmaterial .form-rawmaterial .container-buttons .button:nth-child(n - 3) {
+  margin-right: 1rem;
+}
+
+.container-table-material .layout-table-material {
+  padding: 24px 32px;
+}
+
+.container-table-material .layout-table-material .table {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.3);
+  border: 1px solid transparent;
+  border-radius: 0 0 3px 3px;
+}
+.container-table-material .layout-table-material .table .table-header {
+  display: flex;
+  background: #1D2939;
+}
+.container-table-material .layout-table-material .table .table-header .t-head {
+  width: calc(100% / 4);
+  padding: 16px 8px;
+  text-align: center;
+}
+.container-table-material .layout-table-material .table .table-header .t-head span{
+  color: #ffffff;
+}
+.container-table-material .layout-table-material .table .table-body .row-unit {
+  display: flex;
+  border-bottom: 1px solid #1D2939;
+}
+.container-table-material .layout-table-material .table .table-body .row-unit .t-body {
+  width: calc(100% / 4);
+  padding: 16px 8px;
+  text-align: center;
+}
+.container-table-material .layout-table-material .table .table-body .row-unit .t-body:first-child {
+  cursor: pointer;
+}

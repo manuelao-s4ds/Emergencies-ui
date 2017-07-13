@@ -1,0 +1,147 @@
+
+
+md-dialog-container{
+  padding: 0 !important;
+}
+.container-modal .form-material{
+  background: #ffffff;
+}
+.container-modal .form-material form .container-inputs .layout-input {
+  display: flex;
+  justify-content: space-between;
+}
+.container-modal .form-material form .container-inputs .layout-input .container-input {
+ width: 48%;
+}
+.container-modal .form-material form .container-inputs .layout-input .container-input label {
+  display: block;
+  margin: 15px auto;
+  color: #505050;
+  font-size: 15px;
+  width: 100%;
+}
+.container-modal .form-material form .container-inputs .layout-input .container-input label input {
+  background-color: #FFFFFF;
+  color: #505050;
+  border: 1px solid #505050;
+  height: 35px;
+  width: 250px;
+  border-radius: 2px;
+  text-indent: 3px;
+  display: block;
+  margin-top: 5.8px;
+  width: 100%;
+}
+
+.container-modal .form-material form .container-inputs .layout-input .container-input label select {
+  background-color: #FFFFFF;
+  color: #505050;
+  border: 1px solid #505050;
+  height: 40px;
+  width: 250px;
+  border-radius: 2px;
+  text-indent: 3px;
+  margin-top: 5.8px;
+  width: 100%;
+}
+.container-modal .layout-form-rawmaterial .title-form-rawmaterial h2{
+  margin: 0;
+  color: #505050;
+}
+
+.container-modal .layout-form-rawmaterial .form-rawmaterial {
+  padding: 2rem 3rem;
+  background: #FFFFFF;
+}
+.container-modal .layout-form-rawmaterial .form-rawmaterial form .container-inputs {
+  width: 90%;
+  margin: 0 auto;
+}
+.container-modal .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input {
+  display: flex;
+  justify-content: space-between;
+}
+.container-modal .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input .container-input {
+  width: 48%;
+}
+.container-modal .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input .container-input label {
+  display: block;
+  margin: 15px auto;
+  color: #505050;
+  font-size: 15px;
+  width: 100%;
+}
+.container-modal .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input .container-input label input {
+  background-color: #FFFFFF;
+  color: #505050;
+  border: 1px solid #505050;
+  height: 35px;
+  width: 250px;
+  border-radius: 2px;
+  text-indent: 3px;
+  display: block;
+  margin-top: 5.8px;
+  width: 100%;
+}
+
+.container-modal .layout-form-rawmaterial .form-rawmaterial form .container-inputs .layout-input .container-input label select {
+  background-color: #FFFFFF;
+  color: #505050;
+  border: 1px solid #505050;
+  height: 40px;
+  width: 250px;
+  border-radius: 2px;
+  text-indent: 3px;
+  margin-top: 5.8px;
+  width: 100%;
+}
+.container-modal .container-table-material .layout-table-material {
+  padding: 24px 32px;
+}
+
+.container-modal .container-table-material .layout-table-material .table {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.3);
+  border: 1px solid transparent;
+  border-radius: 0 0 3px 3px;
+}
+.container-modal .container-table-material .layout-table-material .table .table-header {
+  display: flex;
+  background: #1D2939;
+}
+.container-modal .container-table-material .layout-table-material .table .table-header .t-head {
+  width: calc(100% / 4);
+  padding: 16px 8px;
+  text-align: center;
+}
+.container-modal .container-table-material .layout-table-material .table .table-header .t-head span{
+  color: #ffffff;
+}
+.container-modal .container-table-material .layout-table-material .table .table-body .row-unit {
+  display: flex;
+  border-bottom: 1px solid #1D2939;
+}
+.container-modal .container-table-material .layout-table-material .table .table-body .row-unit .t-body {
+  width: calc(100% / 4);
+  padding: 16px 8px;
+  text-align: center;
+}
+.container-modal .container-table-material .layout-table-material .table .table-body .row-unit .t-body:first-child {
+  cursor: pointer;
+}
+
+
+.container-buttons-modal button {
+  height: 30px;
+  width: 100px;
+  border: none;
+  background: #1D2939;
+  color: #ffffff;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.container-buttons-modal button:first-child {
+  margin-right: 16px;
+}
