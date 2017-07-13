@@ -18,8 +18,18 @@
   border-bottom: 1px solid #C1C1C1;
   justify-content: center;
   border-bottom: none;
-  padding-top: 0;
-  padding-bottom: 2rem;
+}
+.container-form-rawmaterial .container-buttons-modal button {
+  height: 30px;
+  width: 100px;
+  border: none;
+  background: #1D2939;
+  color: #ffffff;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.container-buttons-modal button:first-child {
+  margin-right: 16px;
 }
 
 .container-form-rawmaterial .layout-form-rawmaterial .title-form-rawmaterial h2{
