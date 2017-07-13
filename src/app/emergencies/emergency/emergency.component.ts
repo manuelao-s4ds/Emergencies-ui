@@ -15,8 +15,8 @@ export class EmergencyComponent implements OnInit {
   ambulances: any [];
   paramedics: any [];
   patients: any [];
-  ambulanceSelected: any [];
-  driverSelected: any [];
+  ambulanceSelected: any;
+  driverSelected: any;
   paramedicsSelected: any [];
   positions: any [];
 
@@ -27,6 +27,9 @@ export class EmergencyComponent implements OnInit {
     this.ambulances = [];
     this.paramedics = [];
     this.patients = [];
+    this.ambulanceSelected = {};
+    this.driverSelected = {};
+    this.paramedicsSelected = [];
     this.positions = [];
   }
 
@@ -34,6 +37,7 @@ export class EmergencyComponent implements OnInit {
     this.createForm();
     this.getAmbulances();
     this.getParamedics();
+    this.getPosition();
   }
 
   createForm() {
@@ -88,13 +92,12 @@ export class EmergencyComponent implements OnInit {
   }
   saveEmergency() {
     if (this.formEmergency.valid) {
-      this.getPosition();
       const emergency = {
         date: this.formEmergency.get('date').value,
         type_emergency: this.formEmergency.get('category').value,
         driver: this.driverSelected,
         ambulance: this.ambulanceSelected,
-        paramedic: this.paramedics,
+        paramedic: this.paramedicsSelected,
         patient: this.patients,
         location: {
           type: 'Point',
@@ -121,14 +124,20 @@ export class EmergencyComponent implements OnInit {
       this.positions = [data.coords.latitude, data.coords.longitude]
     })
   }
-  setAmbulance(ambulance) {
-    this.ambulanceSelected.push(ambulance);
+  setAmbulance() {
+    const ambulance = this.ambulances.filter(ambulance => ambulance._id === this.formEmergency.get('ambulance').value);
+    this.ambulanceSelected = {};
+    this.ambulanceSelected = ambulance[0];
   }
-  setParamedics(paramedic) {
-    this.paramedicsSelected.push(paramedic);
+  setParamedics() {
+    const paramedic = this.paramedics.filter(paramedic => paramedic._id === this.formEmergency.get('paramedic').value);
+    this.paramedicsSelected = [];
+    this.paramedicsSelected.push(paramedic[0]);
   }
-  setDriver(paramedic) {
-    this.driverSelected.push(paramedic);
+  setDriver() {
+    const paramedic = this.paramedics.filter(paramedic => paramedic._id === this.formEmergency.get('driver').value);
+    this.driverSelected = {};
+    this.driverSelected = paramedic[0];
   }
 
 }
