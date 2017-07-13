@@ -11,17 +11,8 @@ import { ModalEditEmergenciesService } from '../../modals/modal-edit-emergencies
 })
 export class TableEmergenciesComponent implements OnInit {
 
-  public rawMaterials: any[];
   public emergencies: any [];
-  public search: string;
   public titleModal: string;
-  public totalPages: number;
-  public color: string;
-  public nextPage: string;
-  public previusPage: string;
-  public numberRegistre: number;
-  public numberPages: number;
-  public configModal: any;
 
   constructor(
     private _emergencyService: EmergencyService,
@@ -29,16 +20,8 @@ export class TableEmergenciesComponent implements OnInit {
     private _toast: ToastsManager,
     private _modalEditEmergenciesService: ModalEditEmergenciesService
   ) {
-    this.rawMaterials = [];
     this.emergencies = [];
-    this.search = '';
-    this.color = '';
     this.titleModal = '';
-    this.totalPages = 0;
-    this.nextPage = '';
-    this.previusPage = '';
-    this.numberRegistre = 0;
-    this.numberPages = 0;
     this._toast.setRootViewContainerRef(_container);
   }
 
@@ -61,7 +44,6 @@ export class TableEmergenciesComponent implements OnInit {
     this._modalEditEmergenciesService.openModal(this.titleModal, data)
       .subscribe(
         (res: any) => {
-          debugger
           if (res.valid) {
             this._emergencyService.update(res.emergency).subscribe(
               (response) => {
@@ -77,7 +59,6 @@ export class TableEmergenciesComponent implements OnInit {
       );
   }
   delete(emergency) {
-    debugger
     this._emergencyService.delete(emergency._id).subscribe(
       (response) => {
         this.getEmergencies();
