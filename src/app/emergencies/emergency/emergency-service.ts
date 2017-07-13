@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {HttpService} from '../lib/HttpClient';
+import {HttpService} from '../../lib/HttpClient';
 import {Response} from '@angular/http';
 
 
@@ -13,7 +13,7 @@ export class EmergencyService {
   }
 
   list(): Observable <Response> {
-    return this._httpService.get(`${EmergencyService.BASE_URL}/maquinas/`);
+    return this._httpService.get(`${EmergencyService.BASE_URL}/emergencies`);
   }
 
   listPage(url: string): Observable <Response> {
@@ -29,11 +29,11 @@ export class EmergencyService {
   }
 
   update(data: any): Observable <Response> {
-    return this._httpService.put(`${EmergencyService.BASE_URL}/maquinas/${data.id}/`, JSON.stringify(data));
+    return this._httpService.put(`${EmergencyService.BASE_URL}/emergencies/${data._id}`, JSON.stringify(data));
   }
 
-  changeStatus(id: number): Observable <Response> {
-    return this._httpService.delete(`${EmergencyService.BASE_URL}/maquinas/${id}/`, JSON.stringify({}));
+  delete(id: number): Observable <Response> {
+    return this._httpService.delete(`${EmergencyService.BASE_URL}/emergencies/${id}/`, JSON.stringify({}));
   }
 
   getAmbulances(): Observable <Response> {
