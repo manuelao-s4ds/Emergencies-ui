@@ -21,6 +21,20 @@
   padding-top: 0;
   padding-bottom: 2rem;
 }
+.container-form-rawmaterial .container-buttons {
+  width: 85%;
+  margin: 2rem auto;
+}
+.container-form-rawmaterial .container-buttons button {
+  height: 40px;
+  width: 130px;
+  border: none;
+  background: #1D2939;
+  color: #ffffff;
+  margin-left: 8px;
+  cursor: pointer;
+  border-radius: 2px;
+}
 
 .container-form-rawmaterial .layout-form-rawmaterial .title-form-rawmaterial h2{
   margin: 0;
