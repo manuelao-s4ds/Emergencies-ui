@@ -113,7 +113,6 @@ export class ModalEditEmergenciesComponent implements OnInit {
       error: {},
       valid: false
     };
-    debugger
     if (this.formEmergency.valid) {
       const emergency = {
         _id: this.data._id,
