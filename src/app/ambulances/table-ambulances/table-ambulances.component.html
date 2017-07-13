@@ -1,0 +1,63 @@
+<div class="container-table-material">
+  <div class="title-table-material">
+    <h2>Ambulancias</h2>
+  </div>
+  <div class="layout-table-material">
+    <div class="layout-sort-by">
+      <div class="container-button">
+        <button [routerLink]="['/ambulancias']">Nueva ambulancia</button>
+      </div>
+    </div>
+    <div class="table">
+      <div class="table-header">
+        <div class="t-head">
+          <span>
+            Marca
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Placa
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Tipo de Ambulancia
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Disponible
+          </span>
+        </div>
+        <div class="t-head">
+          <span>
+            Accion
+          </span>
+        </div>
+      </div>
+      <div class="table-body">
+        <div class="row-unit" *ngFor="let ambulance of ambulances; let i = index">
+          <div class="t-body" (click)="openModal(ambulance)">
+            <span>{{ambulance.car}}</span>
+          </div>
+          <div class="t-body">
+            <span>{{ambulance.car_plate}}</span>
+          </div>
+          <div class="t-body">
+            <span>{{ambulance.type_ambulance}}</span>
+          </div>
+          <div class="t-body">
+            <span>{{ambulance.available == true ? "Si" : "No"}}</span>
+          </div>
+          <div class="t-body actions">
+            <figure class="container-icons" (click)="delete(ambulance)">
+              <img src="assets/images/icons/delete_icon.png" alt="">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

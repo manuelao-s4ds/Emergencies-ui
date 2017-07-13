@@ -1,10 +1,10 @@
 <md-toolbar color="primary">
   <span>Paramedicos</span>
   <span class="fill-remaining-space"></span>
-  <button md-icon-button [mdMenuTriggerFor]="menu">
+  <button md-icon-button [mdMenuTriggerFor]="menuParamedicos">
     <md-icon>more_vert</md-icon>
   </button>
-  <md-menu #menu="mdMenu">
+  <md-menu #menuParamedicos="mdMenu">
     <button md-menu-item routerLink="/paramedicos">
     <md-icon>home</md-icon>
     <span>Registrar</span>
@@ -12,11 +12,22 @@
   </md-menu>
   <span>Emergencias</span>
   <span class="fill-remaining-space"></span>
-  <button md-icon-button [mdMenuTriggerFor]="menu">
+  <button md-icon-button [mdMenuTriggerFor]="menuEmergencias">
     <md-icon>more_vert</md-icon>
   </button>
-  <md-menu #menu="mdMenu">
+  <md-menu #menuEmergencias="mdMenu">
     <button md-menu-item routerLink="/emergencias">
+    <md-icon>home</md-icon>
+    <span>Registrar</span>
+  </button>
+  </md-menu>
+  <span>Ambulancias</span>
+  <span class="fill-remaining-space"></span>
+  <button md-icon-button [mdMenuTriggerFor]="menuAmbulancias">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #menuAmbulancias="mdMenu">
+    <button md-menu-item routerLink="/ambulancias">
     <md-icon>home</md-icon>
     <span>Registrar</span>
   </button>

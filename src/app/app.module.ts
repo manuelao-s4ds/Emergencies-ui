@@ -16,10 +16,12 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { MainWindowComponent } from './main-window/main-window.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
-import { AmbulancesComponent } from './ambulances/ambulances.component';
+import { AmbulancesComponent } from './ambulances/ambulance/ambulances.component';
 import { EmergencyComponent } from './emergencies/emergency/emergency.component';
 import { TableEmergenciesComponent } from './emergencies/table-emergencies/table-emergencies.component';
 import { ModalEditEmergenciesComponent } from './modals/modal-edit-emergencies/modal-edit-emergencies.component';
+import { TableAmbulancesComponent } from './ambulances/table-ambulances/table-ambulances.component';
+import { ModalEditAmbulancesComponent } from './modals/modal-edit-ambulances/modal-edit-ambulances.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ModalEditEmergenciesComponent } from './modals/modal-edit-emergencies/m
     EmergencyComponent,
     TableEmergenciesComponent,
     ModalEditEmergenciesComponent,
-    AmbulancesComponent
+    AmbulancesComponent,
+    TableAmbulancesComponent,
+    ModalEditAmbulancesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,7 @@ import { ModalEditEmergenciesComponent } from './modals/modal-edit-emergencies/m
     ToastModule.forRoot()
   ],
   entryComponents: [
-    ModalEditEmergenciesComponent
+    ModalEditEmergenciesComponent, ModalEditAmbulancesComponent
   ],
   providers: [AuthGuard, Oauthv2TokenHandlerService, HttpService],
   bootstrap: [AppComponent]

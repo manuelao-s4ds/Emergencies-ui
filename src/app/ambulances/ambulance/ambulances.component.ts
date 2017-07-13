@@ -12,6 +12,7 @@ import { AmbulanceService } from './ambulances-service';
 export class AmbulancesComponent implements OnInit {
 
   formAmbulance: FormGroup;
+  public errorMessage: string;
 
   constructor( private fb: FormBuilder, private _ambulanceService: AmbulanceService) { }
 
@@ -34,7 +35,7 @@ export class AmbulancesComponent implements OnInit {
         car: this.formAmbulance.get('car').value,
         car_plate: this.formAmbulance.get('car_plate').value,
         type_ambulance: this.formAmbulance.get('type_ambulance').value,
-        available: this.formAmbulance.get('available').value == true ? "true" : "false"
+        available: this.formAmbulance.get('available').value
       };
       this.formAmbulance.reset({
         car: '',
@@ -50,7 +51,12 @@ export class AmbulancesComponent implements OnInit {
           console.log(error.json());
         }
       );
+    }else {
+      this.errorMessage = 'Los campos marcados con * son obligatorios';
     }
+  }
+  cancel() {
+    this.formAmbulance.reset();
   }
 
 }

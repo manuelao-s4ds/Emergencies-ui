@@ -3,6 +3,9 @@
     <div class="title-form-rawmaterial">
       <h2>Registro Ambulancia</h2>
     </div>
+    <div class="container-error">
+      <p>{{errorMessage}}</p>
+    </div>
     <div class="form-rawmaterial">
       <form [formGroup]="formAmbulance">
         <div class="container-inputs">
@@ -40,8 +43,8 @@
   </div>
   <div class="container-buttons">
       <button class="button" (click)="saveAmbulance()">Guardar Ambulancia</button>
-      <button class="button" [routerLink]="['/menu/compras/tablamateriaprima']">Listado</button>
-      <button class="button">Cancelar</button>
+      <button class="button" [routerLink]="['/listado-ambulancias']">Listado</button>
+      <button class="button" (click)="cancel()">Cancelar</button>
   </div>
 </div>
 
