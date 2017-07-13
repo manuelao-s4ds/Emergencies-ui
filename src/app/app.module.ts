@@ -19,6 +19,9 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { EmergencyComponent } from './emergencies/emergency/emergency.component';
 import { TableEmergenciesComponent } from './emergencies/table-emergencies/table-emergencies.component';
 import { ModalEditEmergenciesComponent } from './modals/modal-edit-emergencies/modal-edit-emergencies.component';
+import { ParamedicsComponent } from './paramedics/paramedics/paramedics.component';
+import { TableParamedicsComponent } from './paramedics/table-paramedics/table-paramedics.component';
+import { ModalEditParamedicsComponent } from './modals/modal-edit-paramedics/modal-edit-paramedics.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ModalEditEmergenciesComponent } from './modals/modal-edit-emergencies/m
     ContactListComponent,
     EmergencyComponent,
     TableEmergenciesComponent,
-    ModalEditEmergenciesComponent
+    ModalEditEmergenciesComponent,
+    ParamedicsComponent,
+    TableParamedicsComponent,
+    ModalEditParamedicsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,8 @@ import { ModalEditEmergenciesComponent } from './modals/modal-edit-emergencies/m
     ToastModule.forRoot()
   ],
   entryComponents: [
-    ModalEditEmergenciesComponent
+    ModalEditEmergenciesComponent,
+    ModalEditParamedicsComponent
   ],
   providers: [AuthGuard, Oauthv2TokenHandlerService, HttpService],
   bootstrap: [AppComponent]
